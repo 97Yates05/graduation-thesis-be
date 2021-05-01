@@ -5,7 +5,10 @@ import { Model } from 'mongoose';
 @Injectable()
 export class IndustryService {
   constructor(@InjectModel('industry') private industryModel: Model<any>) {}
-  async findAll(): Promise<any> {
-    return this.industryModel.find().exec();
+  async findByName(name: string): Promise<any> {
+    return this.industryModel
+      .find({ name: new RegExp(name, 'i') })
+      .limit(10)
+      .exec();
   }
 }
