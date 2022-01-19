@@ -1,4 +1,4 @@
-   podTemplate(yaml: '''
+   podTemplate(cloud: 'kubernetes', yaml: '''
                              apiVersion: v1
                              kind: Pod
                              spec:
@@ -7,7 +7,7 @@
                                  image: node:latest-alpine
                ''') {
         node("myPod") {
-            stage('Run shell') {
+            ontainer('node') {
                 sh 'node -v'
             }
         }
