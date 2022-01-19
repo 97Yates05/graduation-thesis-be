@@ -11,10 +11,13 @@ export class IndustryChain extends Document {
   detail: string;
   @ApiPropertyOptional()
   preview: string;
+  @ApiPropertyOptional()
+  description: string;
 }
 
 export const IndustryChainSchema = new mongoose.Schema({
   name: { required: true, type: String },
   detail: String,
   preview: String,
+  description: String,
 });

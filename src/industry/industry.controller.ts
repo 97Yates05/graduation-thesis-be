@@ -17,8 +17,8 @@ export class IndustryController {
     private industryService: IndustryService,
   ) {}
 
-  @Get('list')
-  findOne(@Query('name') name): Promise<any> {
-    return this.industryService.findByName(name);
-  }
+  // @Get('list')
+  // findOne(@Query('name') name): Promise<any> {
+  //   return this.industryService.findByName(name);
+  // }
 }

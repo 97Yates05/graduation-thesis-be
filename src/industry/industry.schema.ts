@@ -8,10 +8,10 @@ export class Industry extends Document {
   @ApiProperty()
   name: string;
   @ApiPropertyOptional()
-  company: string[];
+  description: string;
 }
 
 export const IndustrySchema = new mongoose.Schema({
   name: { required: true, type: String },
-  company: [mongoose.Schema.Types.ObjectId],
+  description: { type: String },
 });
