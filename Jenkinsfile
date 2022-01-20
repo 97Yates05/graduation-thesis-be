@@ -5,13 +5,21 @@ pipeline {
     }
   }
   stages {
-    stage('Build') {
+    stage('配置依赖') {
         steps {
             container('node') {
-                sh 'node -v'
+                sh 'npm install'
                 sh 'ls'
             }
        }
+    }
+    stage('打包构建') {
+        steps {
+            container('node'){
+                sh 'npm run build'
+                sh 'ls'
+            }
+        }
     }
   }
 }
