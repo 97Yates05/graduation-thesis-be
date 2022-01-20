@@ -9,6 +9,7 @@ pipeline {
         steps {
             container('node') {
                 sh 'node -v'
+                sh 'ls'
             }
        }
     }
