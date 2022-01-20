@@ -7,7 +7,7 @@
                                  image: node:latest-alpine
                ''') {
         node("myPod") {
-            ontainer('node') {
+            container('node') {
                 sh 'node -v'
             }
         }
