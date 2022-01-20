@@ -4,7 +4,11 @@ pipeline {
       yamlFile 'KubernetesPod.yaml'
     }
   }
-  stages('test') {
-    sh 'ls'
+  stages {
+    stage('Build') {
+        steps {
+            sh 'node -v'
+       }
+    }
   }
 }
