@@ -2,13 +2,13 @@
                              apiVersion: v1
                              kind: Pod
                              spec:
-                               containers:
-                               - name: node
-                                 image: node:latest-alpine
+//                                containers:
+//                                - name: node
+//                                  image: node:latest-alpine
                ''') {
         node("myPod") {
-            container('node') {
-                sh 'node -v'
-            }
+//             container('node') {
+//                 sh 'node -v'
+//             }
         }
     }
