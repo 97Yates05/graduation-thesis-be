@@ -1,14 +1,25 @@
-   podTemplate(yaml: '''
-                             apiVersion: v1
-                             kind: Pod
-                             spec:
-                               containers:
-                               - name: node
-                                 image: node:latest-alpine
-               ''') {
-        node("myPod") {
-            stage('Run shell') {
-                sh 'node -v'
+pipeline {
+  agent {
+    kubernetes {
+      yamlFile 'pod.yaml'
+    }
+  }
+  stages {
+    stage('配置依赖') {
+        steps {
+            container('node') {
+                sh 'npm install'
+                sh 'ls'
+            }
+       }
+    }
+    stage('打包构建') {
+        steps {
+            container('node'){
+                sh 'npm run build'
+                sh 'ls'
             }
         }
     }
+  }
+}
