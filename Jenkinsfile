@@ -4,8 +4,7 @@ pipeline {
       yamlFile 'KubernetesPod.yaml'
     }
   }
-  stages {
-    checkout scm
+  stages('test') {
     sh 'ls'
   }
 }
