@@ -3,4 +3,4 @@ kind: Pod
 spec:
   containers:
     - name: node
-      image: node:latest-alpine
+      image: node:17-alpine
