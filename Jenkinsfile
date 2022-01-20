@@ -1,5 +1,5 @@
 podTemplate(yaml: readTrusted('pod.yaml')) {
-    node('myPod') {
+    node(POD_LABEL) {
         stage('test'){
             container('node'){
                 sh 'node -v'
