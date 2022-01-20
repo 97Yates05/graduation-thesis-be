@@ -4,3 +4,7 @@ spec:
   containers:
     - name: node
       image: node:17-alpine
+      command:
+        - sleep
+      args:
+        - 99d
