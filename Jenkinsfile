@@ -1,7 +1,4 @@
-   podTemplate(cloud: 'kubernetes', yaml: '''
-                             apiVersion: v1
-                             kind: Pod
-               ''') {
+   podTemplate(cloud: 'kubernetes') {
         node("myPod") {
         }
     }
